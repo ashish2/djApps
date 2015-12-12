@@ -1,0 +1,262 @@
+
+.posts {
+	border: 1px solid red;
+}
+
+
+.body {
+/*
+	border: 1px solid black;
+*/
+}
+
+.border-1-black {
+/*
+	border: 1px solid black;
+*/
+}
+
+
+/* Posts */
+
+.main-post{
+	margin: 0 1em;
+	padding: 0 1em;	
+}
+
+.each-posts {
+	/*border-bottom: 1px solid lightgrey;*/
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 0.1em solid #DCE7EA;
+    box-shadow: 0 0 1em #E5E5E5;
+    margin: 0.5em 0;
+    padding: 1em 1em 2em;
+    position: relative;
+}
+
+.each-posts:hover {
+    border: 0.1em solid #CCCCCC;
+    box-shadow: 0 0 1em #E0E0E0;
+}
+
+/* Posts- */
+
+
+/* Votes */
+
+.vote-up>a:hover{
+	color: green;
+}
+
+.vote-down>a:hover{
+	color: red;
+}
+
+/* Votes- */
+
+
+/* Form */
+
+.form-signin {
+	margin: 0 auto;
+	max-width: 330px;
+	padding: 15px;
+}
+
+
+/* anchor */
+a:hover, a:focus {
+	text-decoration: none;
+}
+
+
+/* Footer */
+#footer {
+	/*background-color: #F5F5F5;*/
+	background-color: #BDBDBD;
+	height: 60px;
+	margin-top: 7px;
+}
+
+.container .credit {
+	margin: 20px 0;
+}
+
+
+/*Nav*/
+
+
+#nav-search{
+	width: 50%;
+}
+#search input[type="text"] {
+    background: url("../img/search.png?1343882941") no-repeat scroll 4px center white;
+    padding: 7px 10px 3px 20px;
+}
+
+.width-auto{
+	width: auto;
+}
+
+
+#nav-sub-btn-span{
+	line-height: 1.428571429;
+}
+
+/*Nav-*/
+
+
+/*General*/
+
+.padding-top-5{
+	padding-top: 5px;
+}
+
+.margin-top-6{
+	margin-top: 6px;
+}
+.margin-top-7{
+	margin-top: 7px;
+}
+
+.margin-top-10{
+	margin-top: 10px;
+}
+
+.margin-bottom-20{
+	margin-bottom: 20px;
+}
+
+.margin-tp-90{
+	margin-top: 90px;
+}
+
+.margin-bt-100{
+	margin-bottom: 100px;
+}
+
+.c-color-777{
+	color: #777;
+}
+
+.c-color-777:hover{
+	color: #333;
+}
+
+.c-text-align-center {
+	text-align: center;
+}
+
+.ht-16px{
+	height: 16px;
+}
+
+.ht-90{
+	height: 90px;
+}
+
+.ht-100px{
+	height: 100px;
+}
+
+.disp_none_show_on_parent_hover {
+	display: none;
+}
+
+.fc-black2{
+	color: #4A4A4A;
+}
+
+.c-fixed{
+	position: fixed;
+}
+
+.content{
+}
+
+
+.main-nav > div {
+	padding: 10px !important;
+}
+.main-nav a {
+	font-size: 18px;
+}
+.main-nav #title{
+	margin-top: -3px;
+}
+nav, header, a, img, li, div {
+	-moz-transition : all 1s ease 0s;
+	-webkit-transition : all 1s ease 0s;
+	-o-transition : all 1s ease 0s;
+	transition : all 1s ease 0s;
+}
+
+
+/*.main-nav > div {
+	padding: 24px !important;
+	font-size: 19px;
+}
+
+nav, header, a, img, li, div {
+	-webkit-transition : all 1s ease 0s;
+}
+*/
+
+/*.main-nav > div {
+	padding: 20px !important;
+	font-size: 18px;
+}
+nav, .main-nav li, .main-nav a, .main-nav div {
+	-webkit-transition : all 1s ease 0s;
+}
+*/
+
+/*General-*/
+
+
+
+/*<language>-<tablename>-<area> <css>-<pts>-<footer>*/
+.c-pts-footer{}
+
+
+
+.header-user-img {
+	height: 20px;
+	width: 20px;
+	display: inline-block;
+}
+
+/*Check these two, and redo if can,
+as they are both adding styles to `id`,
+instead of `class`
+*/#notificationParent{
+	margin: 0 40%;
+	position: absolute;
+}
+
+#notification {
+	position: relative;
+	z-index: 9999;
+	width: auto;
+}
+
+/*.some-user-funcs {
+	display: none;
+}
+*/
+
+.cursor:hover{
+	cursor: pointer
+}
+
+
+
+/* Other */
+.options{
+	font-size: 20px;
+}
+
+
+
+/* Other- */
+

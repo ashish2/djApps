@@ -1,0 +1,151 @@
+{% extends "aj_bbase.html" %}
+
+{% block content %}
+	<div>
+		
+	</div>
+	
+<!--
+	<div class="main" data-ng-controller="MoviesCtrl as mc" data-ng-init="init()">
+-->
+	
+	<div class="main" data-ng-controller="MoviesCtrl" data-ng-init="init()">
+		
+		<div class="col-lg-12">
+			
+			<div class="row">
+				
+				<div class="col-lg-2 col-md-4">
+					Filter (By Language):
+					<select data-ng-change="prepareFilter()" data-ng-model="params.languages">
+						<option value="">No Filter</option>
+						<option value=1>English</option>
+						<option value=2>Hindi</option>
+					</select>
+				</div>
+				
+				<div class="col-lg-2 col-md-4">
+					Filter (By Genre):
+					<select data-ng-change="prepareFilter()" data-ng-model="params.categories">
+						<option value="">No Filter</option>
+						<option value=1>Action</option>
+						<option value=2>Comedy</option>
+					</select>
+				</div>
+			
+			</div>
+			
+			<div class="row">
+				<div class="col-lg-2 col-md-4">
+					Sort (By Length):
+					<select data-ng-change="prepareFilter()" data-ng-model="params.order_by">
+						<option value="">No Sort</option>
+						<option value="length">Ascending</option>
+						<option value="-length">Descending</option>
+					</select>
+				</div>
+				
+				<div class="col-lg-2 col-md-4">
+					Sort (By Release Date):
+					<select data-ng-change="prepareFilter()" data-ng-model="params.order_by">
+						<option value="">No Sort</option>
+						<option value="release_date">Oldest First</option>
+						<option value="-release_date">Latest First</option>
+					</select>
+				</div>
+				
+			</div>
+				
+			<div class="row">
+				
+				<div class="col-lg-2 col-md-6">
+					Limit Results (Default None):
+					<select data-ng-change="prepareFilter()" data-ng-model="params.limit">
+						<option value="">Default None</option>
+						<option value=1>1</option>
+						<option value=2>2</option>
+					</select>
+				</div>
+				
+				<div class="col-lg-2 col-md-6">
+					Page:
+					<select data-ng-change="prepareFilter()" data-ng-model="params.offset">
+						<option data-ng-repeat="n in res.meta.total_count" value={$ n $}>Default 0</option>
+						<option value=1>1</option>
+						<option value=2>2</option>
+					</select>
+				</div>
+				
+			</div>
+				
+			
+			<div class="start-posts" data-ng-repeat="post in movies">
+				<!-- Posts -->
+					<div class="each-posts well">
+						<div class="row">
+							<div class="col-lg-11">
+								<div class="post-title">
+									<a href="">{$ post.title $} - {$ post.id $}</a>
+								</div>
+								<div class="body">
+								</div>
+								<div class="row">
+									<div class="col-lg-2">
+										<!-- Comments -->
+										<div class ="btn-post-answer-reply commentlink">
+											{$ post.description $} - {$ post.name $}
+										</div>
+										<!-- Comments/ -->
+									</div>
+									<div class="col-lg-4">
+										<!-- Time -->
+										<div class="post-time">
+											<small>
+												{$ post.created_at $}
+											</small>
+										</div>
+										<!-- Time- -->
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				
+			</div>
+			
+			<!-- Next/Prev page links -->
+			{% if posts and posts.paginator.num_pages > 1  %}
+<!--
+			<div class="pagination" style="margin-top: 20px; margin-list: -20px;">
+				<span class="step-links">
+-->
+					{% if posts.has_previous %}
+<!--
+						<a href="?page={{posts.previous_page_number}}">
+							newer entries &lt;&lt;
+						</a>
+-->
+					{% endif %}
+<!--
+					<span class="current">
+						&nbsp;Page {{ posts.number }} of {{ posts.paginator.num_pages }}
+					</span>
+-->
+					{% if posts.has_next %}
+<!--
+						<a href="?page={{posts.next_page_number}}">
+							&gt;&gt; older entries
+						</a>
+-->
+					{% endif %}
+<!--
+				</span>
+			</div>
+-->
+			{% endif %}
+			
+		</div>
+		
+	</div>
+{% endblock %}
+
