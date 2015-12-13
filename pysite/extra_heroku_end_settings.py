@@ -5,11 +5,16 @@ from settings import DATABASES
 
 ### Settings for Heroku
 import dj_database_url
-#DATABASES['default'] = dj_database_url.config()
-#DATABASES['default'] = dj_database_url.config()
 #DATABASES['default'] = dj_database_url.config(default=os.environ.get('DATABASE_URL'))
 
 heroku_pg_url = 'postgres://ivvmabgfrysfgo:hJJ_2qRdime4SRRH9AeiY-GqYz@ec2-50-17-207-54.compute-1.amazonaws.com:5432/df4n1vasgl12gv'
+heroku_pg_url = "postgres://ezvnjwuahvqkbn:0EcFmNpePt3ARLBAOjiyDH9rwx@ec2-54-204-35-207.compute-1.amazonaws.com:5432/d6lgoemjjf1emo"
+
+# New For this app
+#HEROKU_POSTGRESQL_PUCE_URL
+#postgresql-reticulated-9660
+#/
+
 DATABASES = {'default': dj_database_url.config(default=heroku_pg_url)}
 
 # honor the 'x_forwarded_proto' header for request.is_secure()
