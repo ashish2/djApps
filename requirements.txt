@@ -7,7 +7,6 @@ Twisted==15.0.0
 dj-database-url==0.3.0
 dj-static==0.0.6
 django-tastypie==0.12.2
-httplib2==0.7.2
 ipython==0.12.1
 lxml==3.4.1
 oauth==1.0.1
@@ -18,12 +17,6 @@ simplejson==2.3.2
 six==1.9.0
 static3==0.6.1
 system-service==0.1.6
-ufw==0.31.1-1
-unattended-upgrades==0.1
 w3lib==1.11.0
 wadllib==1.3.0
 wsgiref==0.1.2
-wxPython-common==2.8.12.1
-xdiagnose==2.5.2ubuntu0.1
-xkit==0.0.0
-zope.interface==4.1.2
