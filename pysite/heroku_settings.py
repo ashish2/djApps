@@ -20,7 +20,7 @@ import sys
 
 # importing some more settings
 #import extra_settings
-from extra_settings import *
+#from extra_settings import *
 
 # ADDED-
 
