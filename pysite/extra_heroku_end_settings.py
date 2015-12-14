@@ -15,7 +15,8 @@ heroku_pg_url = "postgres://ezvnjwuahvqkbn:0EcFmNpePt3ARLBAOjiyDH9rwx@ec2-54-204
 #postgresql-reticulated-9660
 #/
 
-DATABASES = {'default': dj_database_url.config(default=heroku_pg_url)}
+#DATABASES = {'default': dj_database_url.config(default=heroku_pg_url)}
+DATABASES['default']['HOST'] = dj_database_url.config(default=heroku_pg_url)}
 
 # honor the 'x_forwarded_proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
