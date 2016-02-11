@@ -80,6 +80,7 @@ WSGI_APPLICATION = 'pysite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
+DBNAME = 'venv18_2'
 DATABASES = {
 	'default': {
 		#'ENGINE': 'django.db.backends.sqlite3',
@@ -88,7 +89,7 @@ DATABASES = {
 		#'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
 		
 		'ENGINE': 'django.db.backends.postgresql_psycopg2',
-		'NAME': 'venv18_2',
+		'NAME': DBNAME,
 		'USER': 'postgres',
 		'PASSWORD': 'pass',
 	}
@@ -128,15 +129,17 @@ STATIC_URL = '/static/'
 CACHES = {
 	"default": {
 		'BACKEND': 'django_redis.cache.RedisCache',
-		#'LOCATION': '/var/run/redis/redis.sock',
 		'LOCATION': 'redis://127.0.0.1:6379/1',
 		"OPTIONS": {
+			"KEY_PREFIX": "pysite18_2",
 			"CLIENT_CLASS": "django_redis.client.DefaultClient",
 			"PICKLE_VERSION": -1,
-			"SERIALIZER": "django_redis.serializers.json.JSONSerializer",
+			"SERIALIZER": "django_redis.serializers.pickle.PickleSerializer",
 		}
 		
 	}
 }
+
+#SESSION_SERIALIZER = 'django.contrib.sessions.serializers.PickleSerializer'
 
 # A-

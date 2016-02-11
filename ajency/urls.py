@@ -18,6 +18,7 @@ from tastypie.api import *
 urlpatterns = patterns('ajency.views', 
 	
 	url(r"list_all", "list_all" ),
+	url(r"list-all", "list_all" ),
 	# Default
 	url(r"", "list_all" ),
 )

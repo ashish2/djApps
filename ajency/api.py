@@ -27,8 +27,7 @@ from tastypie.authorization import Authorization, DjangoAuthorization
 #
 
 # Cache
-from django.views.decorators.cache import cache_page
-
+#from django.views.decorators.cache import cache_page
 #
 
 class CategoriesResource(ModelResource):
@@ -59,7 +58,7 @@ class MoviesResource(ModelResource):
 			"languages": ALL_WITH_RELATIONS,
 			"categories": ALL_WITH_RELATIONS,
 		}
-		
+	
 	#def get_list(self, request, **kwargs):
 		#pass
 	#
@@ -86,7 +85,17 @@ class MoviesResource(ModelResource):
 			#print bundle.obj
 		#return bundle
 	
-	@cache_page(60*1)
+	# Random Redis Testing
+	def get_all_movies(self):
+		ma = cache.get("ma")
+		if ma:
+			return ma
+		ma = self.objects.all()
+		cache.set("ma", ma)
+		return ma
+	#-
+	
+	@cache_page(60*5)
 	def alter_list_data_to_serialize(self, request, data_dict):
 		print "data_dict"
 		print data_dict
