@@ -26,6 +26,11 @@ from tastypie.authentication import *
 from tastypie.authorization import Authorization, DjangoAuthorization
 #
 
+# Cache
+from django.views.decorators.cache import cache_page
+
+#
+
 class CategoriesResource(ModelResource):
 	class Meta:
 		queryset = Categories.objects.all()
@@ -81,6 +86,7 @@ class MoviesResource(ModelResource):
 			#print bundle.obj
 		#return bundle
 	
+	@cache_page(60*1)
 	def alter_list_data_to_serialize(self, request, data_dict):
 		print "data_dict"
 		print data_dict

@@ -42,6 +42,7 @@ INSTALLED_APPS = (
 	'tastypie',
 	'ajency',
 	
+	"debug_toolbar",
 )
 
 MIDDLEWARE_CLASSES = (
@@ -122,3 +123,20 @@ STATIC_URL = '/static/'
 #API_LIMIT_PER_PAGE=1
 # Api settings/
 
+# A
+
+CACHES = {
+	"default": {
+		'BACKEND': 'django_redis.cache.RedisCache',
+		#'LOCATION': '/var/run/redis/redis.sock',
+		'LOCATION': 'redis://127.0.0.1:6379/1',
+		"OPTIONS": {
+			"CLIENT_CLASS": "django_redis.client.DefaultClient",
+			"PICKLE_VERSION": -1,
+			"SERIALIZER": "django_redis.serializers.json.JSONSerializer",
+		}
+		
+	}
+}
+
+# A-
