@@ -207,11 +207,10 @@ class RedisMoviesResource(Resource):
 	def detail_uri_kwargs(self, bundle_or_obj):
 		kwargs = {}
 		if isinstance(bundle_or_obj, Bundle):
-			kwargs['pk'] = bundle_or_obj.obj.uuid
+			kwargs['pk'] = bundle_or_obj.obj.id
 		else:
-			kwargs['pk'] = bundle_or_obj.uuid
+			kwargs['pk'] = bundle_or_obj.id
 		return kwargs
-	
 	
 	def _client(self):
 		return redis
@@ -225,8 +224,6 @@ class RedisMoviesResource(Resource):
 	def obj_get(self, bundle, **kwargs):
 		bucket = self._client()
 		message = bucket.hget( "movies", kwargs['pk'])
-		
-		#initial=message.get_data()
 		ini= {"id": kwargs['pk'], "title": message}
 		return RedisObject(initial = ini)
 	
