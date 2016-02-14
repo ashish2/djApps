@@ -126,20 +126,44 @@ STATIC_URL = '/static/'
 
 # A
 
+#CACHES = {
+	#"default": {
+		#'BACKEND': 'django_redis.cache.RedisCache',
+		#'LOCATION': 'redis://127.0.0.1:6379/1',
+		#"OPTIONS": {
+			#"KEY_PREFIX": "pysite18_2",
+			#"CLIENT_CLASS": "django_redis.client.DefaultClient",
+			#"PICKLE_VERSION": -1,
+			#"SERIALIZER": "django_redis.serializers.pickle.PickleSerializer",
+		#}
+		#
+	#}
+#}
+
 CACHES = {
 	"default": {
-		'BACKEND': 'django_redis.cache.RedisCache',
+		'BACKEND': 'redis.StrictRedis',
 		'LOCATION': 'redis://127.0.0.1:6379/1',
 		"OPTIONS": {
 			"KEY_PREFIX": "pysite18_2",
-			"CLIENT_CLASS": "django_redis.client.DefaultClient",
+			"CLIENT_CLASS": "redis.StrictRedis",
 			"PICKLE_VERSION": -1,
-			"SERIALIZER": "django_redis.serializers.pickle.PickleSerializer",
+			"SERIALIZER": "hiredis",
 		}
 		
 	}
 }
 
+REDIS_HOST = "localhost"
+REDIS_PORT = 6379
+REDIS_DATABASE = "1"
+import redis
+redis = redis.StrictRedis(host=REDIS_HOST, port=REDIS_PORT, db=REDIS_DATABASE)
+
+
+
 #SESSION_SERIALIZER = 'django.contrib.sessions.serializers.PickleSerializer'
 
 # A-
+
+

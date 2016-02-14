@@ -9,6 +9,7 @@ cwd = os.getcwd()
 
 v1_api = Api(api_name='v1')
 v1_api.register(MoviesResource())
+v1_api.register(RedisMoviesResource())
 
 urlpatterns = [
 	# Examples:
