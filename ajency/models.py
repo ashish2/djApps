@@ -14,24 +14,19 @@ from django.core.cache import cache
 # Globals
 app_label_ajency = "ajency"
 
-class ClsMeta(object):
-	class Meta:
-		app_label = app_label_ajency
-
-class Categories(BaseModel, ClsMeta):
+class Categories(BaseModel):
 	class Meta:
 		app_label = app_label_ajency
 	name = models.CharField(max_length=512, null=True, default=None)
 	slug = models.SlugField(max_length=128, default=None, blank=True)
 
-class Languages(BaseModel, ClsMeta):
+class Languages(BaseModel):
 	class Meta:
 		app_label = app_label_ajency
 	name = models.CharField(max_length=512, null=True, default=None)
 	slug = models.SlugField(max_length=128, default=None, blank=True)
-	
 
-class Movies(BaseModel, ClsMeta):
+class Movies(BaseModel):
 	class Meta:
 		app_label = app_label_ajency
 	title = models.CharField(max_length=512, null=True, default=None)
