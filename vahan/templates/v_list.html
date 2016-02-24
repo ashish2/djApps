@@ -1,6 +1,7 @@
 {% extends "aj_bbase.html" %}
 
 {% block content %}
+	<link rel="stylesheet" type="text/css" href="/static/lib/microphone-0.7.0/microphone.min.css">
 	<script type="text/javascript" src="/static/lib/microphone-0.7.0/microphone.js"></script>
 	
 	<div>
@@ -29,23 +30,23 @@
 						document.getElementById("error").innerHTML = msg;
 					  };
 					  mic.onready = function () {
-						  console.log("onready");
+						console.log("onready");
 						info("Microphone is ready to record");
 						//mic.start();
 					  };
 					  mic.onaudiostart = function () {
-						  console.log("onaudiostart");
+						console.log("onaudiostart");
 						info("Recording started");
 						error("");
 					  };
 					  mic.onaudioend = function () {
-						  console.log("onaudioend");
+						console.log("onaudioend");
 						info("Recording stopped, processing started");
 					  };
 					  mic.onresult = function (intent, entities) {
-						  console.log("onresult");
-						  console.log(intent);
-						  console.log(entities);
+						console.log("onresult");
+						console.log(intent);
+						console.log(entities);
 						  
 						var r = kv("intent", intent);
 
@@ -68,16 +69,16 @@
 					  };
 					  
 					  mic.onerror = function (err) {
-						  console.log("onerror");
-						  console.log(err);
+						console.log("onerror");
+						console.log(err);
 						error("Error: " + err);
 					  };
 					  mic.onconnecting = function () {
-						  console.log("onconnecting");
+						console.log("onconnecting");
 						info("Microphone is connecting");
 					  };
 					  mic.ondisconnected = function () {
-						  console.log("ondisconnected");
+						console.log("ondisconnected");
 						info("Microphone is not connected");
 					  };
 
@@ -112,17 +113,14 @@
 						makeCall("POST", url, d, onSuccess, onError);
 					}
 					
-					function makeCall(method, url, data_dict, onSuccess, onError) {
+					function makeCall(method, url, data, onSuccess, onError) {
 						di = {
 							method: method,
 							url: url,
-							data: data_dict,
+							data: data,
 							success: onSuccess, 
 							error: onError
 						};
-						
-						console.log("data");
-						console.log(data);
 						
 						$.ajax(di);
 					}
