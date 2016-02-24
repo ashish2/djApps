@@ -3,12 +3,16 @@ from django.contrib import admin
 
 from tastypie.api import Api
 from ajency.api import *
+from vahan.api import *
 
 import os
 cwd = os.getcwd()
 
 v1_api = Api(api_name='v1')
 v1_api.register(MoviesResource())
+v1_api.register(RedisMoviesResource())
+v1_api.register(QueryResource())
+
 
 urlpatterns = [
 	# Examples:
@@ -18,6 +22,7 @@ urlpatterns = [
 	url(r'^admin/', include(admin.site.urls)),
 	
 	url(r'^ajency/', include("ajency.urls")),
+	url(r'^vahan/', include("vahan.urls")),
 	
 	# Api
 	url(r'^api/', include(v1_api.urls)),
