@@ -63,9 +63,10 @@
 
 						document.getElementById("result").innerHTML = r;
 						
-						callInternalApi();
+						callDecisionApi(intent, entities);
 						
 					  };
+					  
 					  mic.onerror = function (err) {
 						  console.log("onerror");
 						  console.log(err);
@@ -91,7 +92,7 @@
 						}
 						return k + "=" + v + "\n";
 					  }
-					  
+					
 					// Make a call to your decision matrix api initiate a decisionMatrix() object // api/v1/decision
 					// to make a decision as to whether Search or Sms
 					// inside the decision page, initiate Search() or Sms() object
@@ -111,8 +112,19 @@
 						makeCall("POST", url, d, onSuccess, onError);
 					}
 					
-					function makeCall(method, url, data) {
-						$.ajax(method, url, d, onSuccess, onError);
+					function makeCall(method, url, data_dict, onSuccess, onError) {
+						di = {
+							method: method,
+							url: url,
+							data: data_dict,
+							success: onSuccess, 
+							error: onError
+						};
+						
+						console.log("data");
+						console.log(data);
+						
+						$.ajax(di);
 					}
 					
 					

@@ -12,6 +12,7 @@ v1_api = Api(api_name='v1')
 v1_api.register(MoviesResource())
 v1_api.register(RedisMoviesResource())
 v1_api.register(QueryResource())
+v1_api.register(DecisionResource())
 
 
 urlpatterns = [

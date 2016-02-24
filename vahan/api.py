@@ -1,3 +1,5 @@
+:/usr/lib/python2.7/dist-packages:/usr/lib/pymodules/python2.7
+
 import json
 
 from django.db import models
@@ -32,17 +34,36 @@ class QueryResource(ModelResource):
 	
 
 class DecisionResource(Resource):
+	""" Make a decision here about what is the intent & then,
+	send an Http Redirect to the appropriate resource
+	Eg. if intent concluded as send_sms then redirect to Sms api, if, `search` redirect to search api
+	
+	Eg. 
+	di = dict()
+	di["send_sms"] = "/api/v1/sms"
+	di["search"] = "/api/v1/search"
+	
+	url = di[intent]
+	HttpRedirect(url)
+	"""
+	
 	class Meta:
 		resource_name = "decision"
 		allowed_methods = ['post']
 	
-	def __init__(self, request):
-		if request.data.intent == "get_search":
-			# Initiate the Search object
-			SearchResource(request.data)
-		elif request.data.intent == "send_sms":
-			# Initiating the Sms object
-			SmsResource(request.data)
+	def __init__(self):
+		#if request.data.intent == "get_search":
+			## Initiate the Search object
+			#SearchResource(request.data)
+		#elif request.data.intent == "send_sms":
+			## Initiating the Sms object
+			#SmsResource(request.data)
+		pass
+	
+	def hydrate(self, bundle):
+		# access request from bundle.request
+		pass
+	
 
 
 class SmsResource(ModelResource):
