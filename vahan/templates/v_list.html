@@ -1,0 +1,146 @@
+{% extends "aj_bbase.html" %}
+
+{% block content %}
+	<script type="text/javascript" src="/static/lib/microphone-0.7.0/microphone.js"></script>
+	
+	<div>
+		
+	</div>
+	
+	<div class="main" data-ng-controller="QueryCtrl" data-ng-init="init()">
+		<div class="col-lg-12">
+			<div class="row">
+				<div class="col-lg-2 col-md-4" style="text-align: center;">
+					
+					<center>
+						<div id="microphone"></div>
+					</center>
+					
+					<pre id="result"></pre>
+					<div id="info"></div>
+					<div id="error"></div>
+					
+					<script type="text/javascript">
+					  var mic = new Wit.Microphone(document.getElementById("microphone"));
+					  var info = function (msg) {
+						document.getElementById("info").innerHTML = msg;
+					  };
+					  var error = function (msg) {
+						document.getElementById("error").innerHTML = msg;
+					  };
+					  mic.onready = function () {
+						  console.log("onready");
+						info("Microphone is ready to record");
+						mic.start();
+					  };
+					  mic.onaudiostart = function () {
+						  console.log("onaudiostart");
+						info("Recording started");
+						error("");
+					  };
+					  mic.onaudioend = function () {
+						  console.log("onaudioend");
+						info("Recording stopped, processing started");
+					  };
+					  mic.onresult = function (intent, entities) {
+						  console.log("onresult");
+						  console.log(intent);
+						  console.log(entities);
+						  
+						var r = kv("intent", intent);
+
+						for (var k in entities) {
+						  var e = entities[k];
+
+						  if (!(e instanceof Array)) {
+							r += kv(k, e.value);
+						  } else {
+							for (var i = 0; i < e.length; i++) {
+							  r += kv(k, e[i].value);
+							}
+						  }
+						}
+
+						document.getElementById("result").innerHTML = r;
+						
+						callInternalApi();
+						
+					  };
+					  mic.onerror = function (err) {
+						  console.log("onerror");
+						  console.log(err);
+						error("Error: " + err);
+					  };
+					  mic.onconnecting = function () {
+						  console.log("onconnecting");
+						info("Microphone is connecting");
+					  };
+					  mic.ondisconnected = function () {
+						  console.log("ondisconnected");
+						info("Microphone is not connected");
+					  };
+
+					  mic.connect("DJU2RQTEEIHV2ZLEXJUMFUJGSLP6QKKM");
+					  //console.log(mic);
+					  // mic.start();
+					  // mic.stop();
+					  
+					  function kv (k, v) {
+						if (toString.call(v) !== "[object String]") {
+						  v = JSON.stringify(v);
+						}
+						return k + "=" + v + "\n";
+					  }
+					  
+					// Make a call to your decision matrix api initiate a decisionMatrix() object // api/v1/decision
+					// to make a decision as to whether Search or Sms
+					// inside the decision page, initiate Search() or Sms() object
+					// having different attributes 
+					// Search.url = google.com
+					// Sms.url = some_sms_api_url
+					function callDecisionApi(intent, entities) {
+						url = "/api/v1/decision";
+						d = {"intent": intent, "entities": entities};
+						onSuccess = function(res){
+							
+						};
+						onError = function(err){
+							
+						};
+						
+						makeCall("POST", url, d, onSuccess, onError);
+					}
+					
+					function makeCall(method, url, data) {
+						$.ajax(method, url, d, onSuccess, onError);
+					}
+					
+					
+					</script>
+					
+				</div>
+				
+				<div class="col-lg-2 col-md-4">
+				</div>
+			
+			</div>
+			
+			
+			<div class="row">
+				<div class="col-lg-2 col-md-4">
+				</div>
+				<div class="col-lg-2 col-md-4">
+				</div>
+			</div>
+				
+			<div class="row">
+				<div class="col-lg-2 col-md-6">
+				</div>
+				<div class="col-lg-2 col-md-6">
+				</div>
+			</div>
+			
+		</div>
+		
+	</div>
+{% endblock %}
