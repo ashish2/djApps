@@ -1,5 +1,3 @@
-:/usr/lib/python2.7/dist-packages:/usr/lib/pymodules/python2.7
-
 import json
 
 from django.db import models
