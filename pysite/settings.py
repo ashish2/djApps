@@ -44,6 +44,7 @@ INSTALLED_APPS = (
 	'ajency',
 	'vahan',
 	
+	"debug_toolbar",
 )
 
 MIDDLEWARE_CLASSES = (
@@ -81,6 +82,7 @@ WSGI_APPLICATION = 'pysite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
+DBNAME = 'venv18_2'
 DATABASES = {
 	'default': {
 		#'ENGINE': 'django.db.backends.sqlite3',
@@ -89,7 +91,7 @@ DATABASES = {
 		#'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
 		
 		'ENGINE': 'django.db.backends.postgresql_psycopg2',
-		'NAME': 'venv18_2',
+		'NAME': DBNAME,
 		'USER': 'postgres',
 		'PASSWORD': 'pass',
 	}
@@ -123,4 +125,47 @@ STATIC_URL = '/static/'
 # Api settings
 #API_LIMIT_PER_PAGE=1
 # Api settings/
+
+# A
+
+#CACHES = {
+	#"default": {
+		#'BACKEND': 'django_redis.cache.RedisCache',
+		#'LOCATION': 'redis://127.0.0.1:6379/1',
+		#"OPTIONS": {
+			#"KEY_PREFIX": "pysite18_2",
+			#"CLIENT_CLASS": "django_redis.client.DefaultClient",
+			#"PICKLE_VERSION": -1,
+			#"SERIALIZER": "django_redis.serializers.pickle.PickleSerializer",
+		#}
+		#
+	#}
+#}
+
+CACHES = {
+	"default": {
+		'BACKEND': 'redis.StrictRedis',
+		'LOCATION': 'redis://127.0.0.1:6379/1',
+		"OPTIONS": {
+			"KEY_PREFIX": "pysite18_2",
+			"CLIENT_CLASS": "redis.StrictRedis",
+			"PICKLE_VERSION": -1,
+			"SERIALIZER": "hiredis",
+		}
+		
+	}
+}
+
+REDIS_HOST = "localhost"
+REDIS_PORT = 6379
+REDIS_DATABASE = "1"
+import redis
+redis = redis.StrictRedis(host=REDIS_HOST, port=REDIS_PORT, db=REDIS_DATABASE)
+
+
+
+#SESSION_SERIALIZER = 'django.contrib.sessions.serializers.PickleSerializer'
+
+# A-
+
 
