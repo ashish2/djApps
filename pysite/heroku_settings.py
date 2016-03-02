@@ -193,6 +193,8 @@ INSTALLED_APPS = (
     #
     'tastypie',
     'ajency',
+    'vahan',
+    "debug_toolbar",
     
     # Added-
     
