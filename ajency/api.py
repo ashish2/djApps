@@ -190,7 +190,6 @@ class RedisMoviesResource(Resource):
 		queryset = RedisObject
 		object_class = RedisObject
 		resource_name = 'redismovies'
-		
 		excludes = ['created_at']
 		allowed_methods = ['get']
 		paginator_class = Paginator

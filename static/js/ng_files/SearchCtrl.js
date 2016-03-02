@@ -9,7 +9,6 @@
 app.controller("QueryCtrl", function($scope, $http){
 	$scope.selectedPerson = 0;
 	$scope.selectedGenre = null;
-	$scope.search_results = [];
 	$scope.people = [
 		{
 			id: 0,

@@ -30,26 +30,22 @@
 						document.getElementById("error").innerHTML = msg;
 					  };
 					  mic.onready = function () {
-						console.log("onready");
 						info("Microphone is ready to record");
 						//mic.start();
 					  };
 					  mic.onaudiostart = function () {
-						console.log("onaudiostart");
 						info("Recording started");
 						error("");
 					  };
 					  mic.onaudioend = function () {
-						console.log("onaudioend");
 						info("Recording stopped, processing started");
 					  };
+					  
+					var g_di = {};
+					
 					  mic.onresult = function (intent, entities) {
-						console.log("onresult");
-						console.log(intent);
-						console.log(entities);
-						  
+						g_di["intent"] = intent;
 						var r = kv("intent", intent);
-
 						for (var k in entities) {
 						  var e = entities[k];
 
@@ -64,8 +60,13 @@
 
 						document.getElementById("result").innerHTML = r;
 						
-						callDecisionApi(intent, entities);
+						//callDecisionApi(intent, entities);
+						callQueryApi(intent, entities);
 						
+						console.log("intent");
+						console.log(intent);
+						console.log("entities");
+						console.log(entities);
 					  };
 					  
 					  mic.onerror = function (err) {
@@ -74,11 +75,9 @@
 						error("Error: " + err);
 					  };
 					  mic.onconnecting = function () {
-						console.log("onconnecting");
 						info("Microphone is connecting");
 					  };
 					  mic.ondisconnected = function () {
-						console.log("ondisconnected");
 						info("Microphone is not connected");
 					  };
 
@@ -91,6 +90,7 @@
 						if (toString.call(v) !== "[object String]") {
 						  v = JSON.stringify(v);
 						}
+						g_di[k] = v;
 						return k + "=" + v + "\n";
 					  }
 					
@@ -113,13 +113,33 @@
 						makeCall("POST", url, d, onSuccess, onError);
 					}
 					
-					function makeCall(method, url, data, onSuccess, onError) {
+					function callQueryApi(intent, entities) {
+						//url = "/api/v1/query/?format=json";
+						url = "/api/v1/"+intent+"/?format=json";
+						d = {"intent": intent, "entities": entities};
+						onSuccess = function(res){
+							//QueryCtrl.search_results = res;
+							//QueryCtrl.search_results = ;
+							e = angular.element($('#search_results')).scope();
+							e.search_results = res.objects;
+							e.$apply();
+						};
+						onError = function(err){
+						};
+						
+						//makeCall("POST", url, d, onSuccess, onError, "application/json");
+						makeCall("GET", url, g_di, onSuccess, onError, "application/json");
+					}
+					
+					function makeCall(method, url, data, onSuccess, onError, ctype) {
+						
 						di = {
 							method: method,
 							url: url,
 							data: data,
 							success: onSuccess, 
-							error: onError
+							error: onError,
+							contentType: ctype
 						};
 						
 						$.ajax(di);
@@ -136,10 +156,9 @@
 			</div>
 			
 			
-			<div class="row">
-				<div class="col-lg-2 col-md-4">
-				</div>
-				<div class="col-lg-2 col-md-4">
+			<div class="row" id="search_results">
+				<div class="col-lg-6 col-md-6" data-ng-repeat="i in search_results">
+					{$ i.title $}: <a href="{$ i.link $}">{$ i.htmlTitle $}</a>
 				</div>
 			</div>
 				

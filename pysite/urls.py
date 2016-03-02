@@ -13,6 +13,8 @@ v1_api.register(MoviesResource())
 v1_api.register(RedisMoviesResource())
 v1_api.register(QueryResource())
 v1_api.register(DecisionResource())
+#v1_api.register(SmsResource())
+v1_api.register(SearchResource())
 
 
 urlpatterns = [
