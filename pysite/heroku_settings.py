@@ -82,7 +82,7 @@ USE_TZ = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"
-MEDIA_ROOT = '/opt/lampp/htdocs/ash3_opt_www/www2/python/venv/venv1_4/pysite_1_4/uploads/'
+MEDIA_ROOT = '/opt/lampp/htdocs/ash3_opt_www/www2/python/venv/venv18_2/pysite/uploads/'
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.

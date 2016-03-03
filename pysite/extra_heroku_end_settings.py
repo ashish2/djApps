@@ -26,7 +26,7 @@ ALLOW_HOST = ['*']
 
 # Static asset configuration
 import os
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 #STATIC_ROOT = 'staticfiles'
 #STATIC_ROOT = 'static_root'
 #STATIC_URL = '/static/'
@@ -37,4 +37,3 @@ STATICFILES_DIRS = (
 	os.path.join(BASE_DIR, 'static'),
 	current_dir,
 )
-
