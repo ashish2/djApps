@@ -1,11 +1,6 @@
 // AngularJs Needed
 // Works on top of AngularJs
 
-//var app = angular.module("MyApp", []).config(function($interpolateProvider) {
-	//$interpolateProvider.startSymbol('{$');
-	//$interpolateProvider.endSymbol('$}');
-//})
-
 app.controller("QueryCtrl", function($scope, $http){
 	$scope.selectedPerson = 0;
 	$scope.selectedGenre = null;
@@ -99,6 +94,10 @@ app.controller("QueryCtrl", function($scope, $http){
 	
 	// Speech-
 	
+	$scope.stripHtml = function(str) {
+		return str.replace(/<\/?[^>]+(>|$)/g, "");
+	};
+	
 	$scope.init = function() {
 		//$scope.sanitizeParams();
 		//params = $.param($scope.params);
@@ -111,6 +110,7 @@ app.controller("QueryCtrl", function($scope, $http){
 			//$scope.movies = $scope.res.objects;
 		//});
 	};
+	
 	
 });
 

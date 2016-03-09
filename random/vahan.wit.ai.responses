@@ -1,0 +1,111 @@
+1]
+intent=Communicate_people
+entities="{"contact":{"start":8,"end":13,"body":"shoot","suggested":true,"value":"shoot"}}"
+contact=shoot
+
+2]
+intent=get_search
+entities=Object {}
+
+3]
+intent=get_search
+entities="{"search_query":{"start":11,"end":17,"body":"google","suggested":true,"value":"google"}}"
+
+intent=get_search
+search_query=google
+
+4]
+
+===
+google search response
+ERR:
+
+{"error_message": "invalid literal for int() with base 10: 'Home Page of Geoffrey Hinton'", "traceback": "Traceback (most recent call last):\n\n  File \"/opt/lampp/htdocs/ash3_opt_www/www2/python/venv/venv18_2/local/lib/python2.7/site-packages/tastypie/resources.py\", line 202, in wrapper\n    response = callback(request, *args, **kwargs)\n\n  File \"/opt/lampp/htdocs/ash3_opt_www/www2/python/venv/venv18_2/local/lib/python2.7/site-packages/tastypie/resources.py\", line 433, in dispatch_list\n    return self.dispatch('list', request, **kwargs)\n\n  File \"/opt/lampp/htdocs/ash3_opt_www/www2/python/venv/venv18_2/local/lib/python2.7/site-packages/tastypie/resources.py\", line 465, in dispatch\n    response = method(request, **kwargs)\n\n  File \"/opt/lampp/htdocs/ash3_opt_www/www2/python/venv/venv18_2/local/lib/python2.7/site-packages/tastypie/resources.py\", line 1298, in get_list\n    bundles.append(self.full_dehydrate(bundle, for_list=True))\n\n  File \"/opt/lampp/htdocs/ash3_opt_www/www2/python/venv/venv18_2/local/lib/python2.7/site-packages/tastypie/resources.py\", line 853, in full_dehydrate\n    bundle.data[field_name] = field_object.dehydrate(bundle, for_list=for_list)\n\n  File \"/opt/lampp/htdocs/ash3_opt_www/www2/python/venv/venv18_2/local/lib/python2.7/site-packages/tastypie/fields.py\", line 139, in dehydrate\n    return self.convert(current_object)\n\n  File \"/opt/lampp/htdocs/ash3_opt_www/www2/python/venv/venv18_2/local/lib/python2.7/site-packages/tastypie/fields.py\", line 238, in convert\n    return int(value)\n\nValueError: invalid literal for int() with base 10: 'Home Page of Geoffrey Hinton'\n"}
+
+
+goog succes data
+
+callQueryApi onSuccess res
+search_query = google
+
+'{"meta":{"limit":20,"next":null,"offset":0,"previous":null,"total_count":10},
+"objects":[
+	{
+		"displayLink":"www.cs.toronto.edu",
+		"formattedUrl":"www.cs.toronto.edu/~hinton/",
+		"htmlSnippet":"I now work part-time for <b>Google</b> as a Distinguished Researcher and part-time for <br>\nthe University of Toronto as a Distinguished Emeritus Professor. For much of the<br>\n&nbsp;...",
+		"htmlTitle":"Home Page of Geoffrey Hinton",
+		"link":"http://www.cs.toronto.edu/~hinton/",
+		"resource_uri":"/api/v1/get_search/None/",
+		"title":"Home Page of Geoffrey Hinton"
+	},
+	{
+		"displayLink":"merlot.usc.edu",
+		"formattedUrl":"merlot.usc.edu/cs402-f13/googlegroup.html",
+		"htmlSnippet":"Aug 21, 2013 <b>...</b> If you use gmail from <b>Google</b> Apps at USC, then option (1) is not available to you. <br>\nYour only option is to use a separate gmail account for our&nbsp;...",
+		"htmlTitle":"<b>Google</b> Group - CSCI 402, Fall 2013, Both Sections",
+		"link":"http://merlot.usc.edu/cs402-f13/googlegroup.html",
+		"resource_uri":"/api/v1/get_search/None/",
+		"title":"Google Group - CSCI 402, Fall 2013, Both Sections"
+	},
+		{"displayLink":"www.cs.rutgers.edu","formattedUrl":"www.cs.rutgers.edu/~mlittman/courses/cs105-07a/googletest1.html","htmlSnippet":"This is a word (sort of) that I concocted on January 3, 2006 and verified that it was <br>\nunknown to <b>Google</b>. (Did you mean: &quot;<b>google</b> discovery&quot;). This page has a&nbsp;...","htmlTitle":"<b>Google</b> Test: Linked Page","link":"http://www.cs.rutgers.edu/~mlittman/courses/cs105-07a/googletest1.html","resource_uri":"/api/v1/get_search/None/","title":"Google Test: Linked Page"},{"displayLink":"www.cs.rutgers.edu","formattedUrl":"https://www.cs.rutgers.edu/resources/show/.../googleauthenticator","htmlSnippet":"Aug 27, 2015 <b>...</b> <b>Google</b> Authenticator is a system of Time Based One Time Password from <br>\nRFC6238. It is often used as part of a Two Factor Authentication for&nbsp;...","htmlTitle":"Enabling <b>Google</b> Authenticator on CS Linux Machine","link":"https://www.cs.rutgers.edu/resources/show/howto/googleauthenticator","resource_uri":"/api/v1/get_search/None/","title":"Enabling Google Authenticator on CS Linux Machine"},{"displayLink":"www.cs.rutgers.edu","formattedUrl":"https://www.cs.rutgers.edu/.../prof-santosh-nagarakatte-awarded-google-grant /","htmlSnippet":"Feb 15, 2014 <b>...</b> Santosh Nagarakatte, who has just received a <b>Google</b> Faculty Research Award. <br>\nHe was awarded an amount of $63500 for his project entitled&nbsp;...","htmlTitle":"Santosh Nagarakatte awarded <b>Google</b> grant","link":"https://www.cs.rutgers.edu/news/articles/2014/02/15/prof-santosh-nagarakatte-awarded-google-grant/","resource_uri":"/api/v1/get_search/None/","title":"Santosh Nagarakatte awarded Google grant"},{"displayLink":"www1.cs.columbia.edu","formattedUrl":"www1.cs.columbia.edu/~mkamvar/publications/CHI_06.pdf","htmlSnippet":"A Large Scale Study of Wireless Search Behavior: <b>Google</b> Mobile Search. <br>\nMaryam Kamvar. 1,2. , Shumeet Baluja. 1,3. {maryam, shumeet} @ <b>google</b>.com. 1<br>\n.","htmlTitle":"A Large Scale Study of Wireless Search Behavior: <b>Google</b> Mobile <b>...</b>","link":"http://www1.cs.columbia.edu/~mkamvar/publications/CHI_06.pdf","resource_uri":"/api/v1/get_search/None/","title":"A Large Scale Study of Wireless Search Behavior: Google Mobile ..."},{"displayLink":"merlot.usc.edu","formattedUrl":"merlot.usc.edu/cs530-s10/googlegroup.html","htmlSnippet":"Sep 17, 2012 <b>...</b> We will use a <b>Google</b> Group for class related communications. The <b>Google</b> Group <br>\nis basically used as a mailing list. This is not the same list as&nbsp;...","htmlTitle":"<b>Google</b> Group - CSCI 530, Spring 2010","link":"http://merlot.usc.edu/cs530-s10/googlegroup.html","resource_uri":"/api/v1/get_search/None/","title":"Google Group - CSCI 530, Spring 2010"},{"displayLink":"www.cs.utexas.edu","formattedUrl":"www.cs.utexas.edu/users/ear/cs349/GoogleQueryResearch.html","htmlSnippet":"<b>Google</b> Query Completion as Social Science Research. 1. Do the following <br>\nexperiment at least three times: a. Choose your favorite search engine. Write <br>\ndown&nbsp;...","htmlTitle":"<b>Google</b> Query Completion as Social Science Research","link":"http://www.cs.utexas.edu/users/ear/cs349/GoogleQueryResearch.html","resource_uri":"/api/v1/get_search/None/","title":"Google Query Completion as Social Science Research"},{"displayLink":"www.cs.man.ac.uk","formattedUrl":"www.cs.man.ac.uk/~david/schools/Google.pdf","htmlSnippet":"How does <b>Google</b> decide which results you may be interested in? <b>Google</b> is not <br>\nthe first Search Engine, earlier were, for example,. Altavista and Yahoo. <b>Google</b>&nbsp;...","htmlTitle":"How does <b>Google</b> work?","link":"http://www.cs.man.ac.uk/~david/schools/Google.pdf","resource_uri":"/api/v1/get_search/None/","title":"How does Google work?"},{"displayLink":"www.cs.rutgers.edu","formattedUrl":"www.cs.rutgers.edu/~mlittman/courses/cs105-07b/googletest1.html","htmlSnippet":"How Does <b>Google</b> Find Pages? This page has little purpose other than to include <br>\nthe word &quot;googleseekeasy&quot;. This is a word (sort of) that I concocted on&nbsp;...","htmlTitle":"<b>Google</b> Test: Linked Page","link":"http://www.cs.rutgers.edu/~mlittman/courses/cs105-07b/googletest1.html","resource_uri":"/api/v1/get_search/None/","title":"Google Test: Linked Page"}]
+		}'
+
+
+
+
+
+
+
+
+
+search_query = yahoo
+
+'{"meta":{"limit":20,"next":null,"offset":0,"previous":null,"total_count":10},
+"objects": [{"displayLink":"www.cs.toronto.edu","formattedUrl":"www.cs.toronto.edu/~vnair/","htmlSnippet":"I am currently a researcher at <b>Yahoo</b>! Labs Bangalore. I got my PhD in machine <br>\nlearning from the University of Toronto in January 2010, working with Prof.","htmlTitle":"Vinod Nair, <b>Yahoo</b>! Labs Bangalore","link":"http://www.cs.toronto.edu/~vnair/","resource_uri":"/api/v1/get_search/None/","title":"Vinod Nair, Yahoo! Labs Bangalore","$$hashKey":"004"},{"displayLink":"www.cs.duke.edu","formattedUrl":"https://www.cs.duke.edu/courses/spring07/cps049s/.../p35-manber.pdf","htmlSnippet":"<b>Yahoo</b>! was one of the first sites on the Web to use personalization on a large <br>\nscale, most notably with its My <b>Yahoo</b>! application introduced in July 1996. Here&nbsp;...","htmlTitle":"PERSONALIZATION ON","link":"https://www.cs.duke.edu/courses/spring07/cps049s/Notes/p35-manber.pdf","resource_uri":"/api/v1/get_search/None/","title":"PERSONALIZATION ON","$$hashKey":"006"},{"displayLink":"www.cs.duke.edu","formattedUrl":"https://www.cs.duke.edu/courses/fall13/cps296.4/838.../ycsb.pdf","htmlSnippet":"derstand the tradeoffs between systems and the workloads for which they are <br>\nsuited. We present the <b>Yahoo</b>! Cloud. Serving Benchmark (YCSB) framework, <br>\nwith&nbsp;...","htmlTitle":"Benchmarking Cloud Serving Systems with YCSB. (.pdf)","link":"https://www.cs.duke.edu/courses/fall13/cps296.4/838-CloudPapers/ycsb.pdf","resource_uri":"/api/v1/get_search/None/","title":"Benchmarking Cloud Serving Systems with YCSB. (.pdf)","$$hashKey":"008"},{"displayLink":"zoo.cs.yale.edu","formattedUrl":"zoo.cs.yale.edu/classes/cs155/fall01/lecture21.ppt","htmlSnippet":"<b>Yahoo</b>: An Internet Portal. Full Name: <b>Yahoo</b>!, Inc. Employees: 3,256 (worldwide, <br>\nas of 9/30/2001); Stock Price (YHOO): $16.26 (at open 11/29/2001); 52-week&nbsp;...","htmlTitle":"PowerPoint","link":"http://zoo.cs.yale.edu/classes/cs155/fall01/lecture21.ppt","resource_uri":"/api/v1/get_search/None/","title":"PowerPoint","$$hashKey":"00A"},{"displayLink":"www.cs.jhu.edu","formattedUrl":"www.cs.jhu.edu/.../peter-anick-yahoo-exploiting-the-power-of-search- engines-for-real-time-concept-association-tasks/","htmlSnippet":"Peter Anick is a member of the Applied Sciences group at <b>Yahoo</b>! where he <br>\ncurrently works on developing infrastructure and tools for supporting online query<br>\n&nbsp;...","htmlTitle":"Department of Computer Science | Peter Anick, <b>Yahoo</b> – “Exploiting <b>...</b>","link":"http://www.cs.jhu.edu/events/peter-anick-yahoo-exploiting-the-power-of-search-engines-for-real-time-concept-association-tasks/","resource_uri":"/api/v1/get_search/None/","title":"Department of Computer Science | Peter Anick, Yahoo – “Exploiting ...","$$hashKey":"00C"},{"displayLink":"www.cs.jhu.edu","formattedUrl":"www.cs.jhu.edu/.../john-langford-yahoo-research-machine-learning-in-the- loop/","htmlSnippet":"John Langford is a computer scientist, working as a senior researcher at <b>Yahoo</b>! <br>\nResearch. He studied Physics and Computer Science at the California Institute&nbsp;...","htmlTitle":"Department of Computer Science | John Langford, <b>Yahoo</b> Research <b>...</b>","link":"http://www.cs.jhu.edu/events/john-langford-yahoo-research-machine-learning-in-the-loop/","resource_uri":"/api/v1/get_search/None/","title":"Department of Computer Science | John Langford, Yahoo Research ...","$$hashKey":"00E"},{"displayLink":"www.cs.jhu.edu","formattedUrl":"https://www.cs.jhu.edu/.../ashwin-machanavajjhala-yahoo-no-free-lunch-in- data-privacy/","htmlSnippet":"Ashwin Machanavajjhala is a Senior Research Scientist in the Knowledge <br>\nManagement group at <b>Yahoo</b>! Research. His primary research interests lie in <br>\ndata&nbsp;...","htmlTitle":"Department of Computer Science | Ashwin Machanavajjhala, <b>Yahoo</b> <b>...</b>","link":"https://www.cs.jhu.edu/events/ashwin-machanavajjhala-yahoo-no-free-lunch-in-data-privacy/","resource_uri":"/api/v1/get_search/None/","title":"Department of Computer Science | Ashwin Machanavajjhala, Yahoo ...","$$hashKey":"00G"},{"displayLink":"www-inst.eecs.berkeley.edu","formattedUrl":"www-inst.eecs.berkeley.edu/~cs186/sp08/yahoomapjavascript.html","htmlSnippet":"<b>Yahoo</b>! Maps provides a set of web services APIs for external applications to use <br>\n<b>Yahoo</b>! Maps as a service. The simplest API allows you to place a location on a&nbsp;...","htmlTitle":"Sample javascript for calling out to <b>Yahoo</b>! maps","link":"http://www-inst.eecs.berkeley.edu/~cs186/sp08/yahoomapjavascript.html","resource_uri":"/api/v1/get_search/None/","title":"Sample javascript for calling out to Yahoo! maps","$$hashKey":"00I"},{"displayLink":"zoo.cs.yale.edu","formattedUrl":"zoo.cs.yale.edu/classes/cs155/spr03/lecture14.ppt","htmlSnippet":"Internet-access companies either partner with a large Internet portal, e.g., <b>Yahoo</b>!, <br>\nor provide a network of comprehensive services on their own (e.g., AOL, MSN)&nbsp;...","htmlTitle":"PowerPoint","link":"http://zoo.cs.yale.edu/classes/cs155/spr03/lecture14.ppt","resource_uri":"/api/v1/get_search/None/","title":"PowerPoint","$$hashKey":"00K"},{"displayLink":"www.cs.jhu.edu","formattedUrl":"https://www.cs.jhu.edu/.../lihong-li-yahoo-research-machine-learning-in-the- bandit-setting-algorithms-evaluation-and-case-studies/","htmlSnippet":"Lihong Li is a Research Scientist in the Machine Learning group at <b>Yahoo</b>! <br>\nResearch. He obtained a PhD degree in Computer Science from Rutgers <br>\nUniversity,&nbsp;...","htmlTitle":"Department of Computer Science | Lihong Li, <b>Yahoo</b> Research <b>...</b>","link":"https://www.cs.jhu.edu/events/lihong-li-yahoo-research-machine-learning-in-the-bandit-setting-algorithms-evaluation-and-case-studies/","resource_uri":"/api/v1/get_search/None/","title":"Department of Computer Science | Lihong Li, Yahoo Research ...","$$hashKey":"00M"}]
+}'
+
+
+
+
+
+
+res = {
+	"meta":{"limit":20,"next":null,"offset":0,"previous":null,"total_count":10},
+	"objects":[
+		{
+			"displayLink":"www.cs.toronto.edu",
+			"formattedUrl":"www.cs.toronto.edu/~hinton/",
+			"htmlSnippet":"I now work part-time for <b>Google</b> as a Distinguished Researcher and part-time for <br>\nthe University of Toronto as a Distinguished Emeritus Professor. For much of the<br>\n&nbsp;...",
+			"htmlTitle":"Home Page of Geoffrey Hinton",
+			"link":"http://www.cs.toronto.edu/~hinton/",
+			"resource_uri":"/api/v1/get_search/None/",
+			"title":"Home Page of Geoffrey Hinton"
+		},
+		{
+			"displayLink":"merlot.usc.edu",
+			"formattedUrl":"merlot.usc.edu/cs402-f13/googlegroup.html",
+			"htmlSnippet":"Aug 21, 2013 <b>...</b> If you use gmail from <b>Google</b> Apps at USC, then option (1) is not available to you. <br>\nYour only option is to use a separate gmail account for our&nbsp;...",
+			"htmlTitle":"<b>Google</b> Group - CSCI 402, Fall 2013, Both Sections",
+			"link":"http://merlot.usc.edu/cs402-f13/googlegroup.html",
+			"resource_uri":"/api/v1/get_search/None/",
+			"title":"Google Group - CSCI 402, Fall 2013, Both Sections"
+		},
+	]
+}
+
+
+res = '{
+	"meta":{"limit":20,"next": undefined,"offset":0,"previous":undefined,"total_count":10},
+	"objects":[
+		{
+			"displayLink":"www.cs.toronto.edu",
+			"formattedUrl":"www.cs.toronto.edu/~hinton/",
+			"htmlSnippet":"I now work part-time for <b>Google</b> as a Distinguished Researcher and part-time for <br>\nthe University of Toronto as a Distinguished Emeritus Professor. For much of the<br>\n&nbsp;...",
+			"htmlTitle":"Home Page of Geoffrey Hinton",
+			"link":"http://www.cs.toronto.edu/~hinton/",
+			"resource_uri":"/api/v1/get_search/None/",
+			"title":"Home Page of Geoffrey Hinton"
+		}
+	]
+}'

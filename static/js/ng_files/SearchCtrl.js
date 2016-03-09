@@ -1,35 +1,10 @@
 // AngularJs Needed
 // Works on top of AngularJs
 
-//var app = angular.module("MyApp", []).config(function($interpolateProvider) {
-	//$interpolateProvider.startSymbol('{$');
-	//$interpolateProvider.endSymbol('$}');
-//})
-
-app.controller("QueryCtrl", function($scope, $http){
+app.controller("SearchCtrl", function($scope, $http){
 	$scope.selectedPerson = 0;
 	$scope.selectedGenre = null;
 	$scope.people = [
-		{
-			id: 0,
-			name: 'Leon',
-			music: [
-				'Rock',
-				'Metal',
-				'Dubstep',
-				'Electro'
-			]
-		},
-		{
-			id: 1,
-			name: 'Chris',
-			music: [
-				'Indie',
-				'Drumstep',
-				'Dubstep',
-				'Electro'
-			]
-		},
 		{
 			id: 2,
 			name: 'Harry',
@@ -97,6 +72,7 @@ app.controller("QueryCtrl", function($scope, $http){
 	};
 	
 	// Speech-
+	
 	
 	$scope.init = function() {
 		//$scope.sanitizeParams();

@@ -85,14 +85,14 @@
 					  //console.log(mic);
 					  // mic.start();
 					  // mic.stop();
-					  
-					  function kv (k, v) {
+					
+					function kv (k, v) {
 						if (toString.call(v) !== "[object String]") {
-						  v = JSON.stringify(v);
+							v = JSON.stringify(v);
 						}
 						g_di[k] = v;
 						return k + "=" + v + "\n";
-					  }
+					}
 					
 					// Make a call to your decision matrix api initiate a decisionMatrix() object // api/v1/decision
 					// to make a decision as to whether Search or Sms
@@ -116,7 +116,7 @@
 					function callQueryApi(intent, entities) {
 						//url = "/api/v1/query/?format=json";
 						url = "/api/v1/"+intent+"/?format=json";
-						d = {"intent": intent, "entities": entities};
+						//d = {"intent": intent, "entities": entities};
 						onSuccess = function(res){
 							//QueryCtrl.search_results = res;
 							//QueryCtrl.search_results = ;
@@ -165,7 +165,7 @@
 						</div>
 						<div class="panel-body">
 							<p>
-								{$ i.htmlSnippet $}
+								{$ stripHtml(i.htmlSnippet) $}
 							</p>
 						</div>
 					</div>

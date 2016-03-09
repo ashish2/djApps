@@ -7,3 +7,15 @@ app.config(function($interpolateProvider) {
 	$interpolateProvider.endSymbol('$}');
 });
 
+// Filters
+//app.filter('strip', function() {
+	//
+	//function stripHtml(input) {
+		//return str.replace(/<\/?[^>]+(>|$)/g, "");
+	//}
+	//
+//});
+
+
+
+// Filters-
