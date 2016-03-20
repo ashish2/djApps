@@ -4,10 +4,10 @@ import sys
 
 if __name__ == "__main__":
     # For DEV
-    #os.environ.setdefault("DJANGO_SETTINGS_MODULE", "pysite.settings")
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "pysite.settings")
     
     # For Heroku
-    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "pysite.heroku_settings")
+    #os.environ.setdefault("DJANGO_SETTINGS_MODULE", "pysite.heroku_settings")
 
     from django.core.management import execute_from_command_line
 

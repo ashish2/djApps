@@ -43,6 +43,7 @@ INSTALLED_APPS = (
 	'tastypie',
 	'ajency',
 	'vahan',
+	'bytemaze',
 	
 	"debug_toolbar",
 )
